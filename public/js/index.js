@@ -3,18 +3,11 @@
        console.log('Connected to server');
 
 
-       socket.emit('createMessage', {
-           from: 'Yan',
-           text: 'That works for me'
-       })
+
    });
    socket.on('newMessage', function(message) {
-       console.log(`You got a new message from ${message.from}:${message.text}`);
+       console.log('newMessage', message);
    })
    socket.on('disconnect', function() {
        console.log('Disconnected from server');
-   });
-
-   socket.on('newEmail', function(email) {
-       console.log('New email', email);
    });
